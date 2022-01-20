@@ -2,11 +2,14 @@ import { defaultComparator } from "./utils.ts";
 
 /**
  * O(N^2)
- * comparisons: N^2/2
+ * comparisons: (N^2-N)/2
  * shifts: N^2/2
  * removals: N-1
  * insertions: N-1
- * Total: N^2 + 2N - 2
+ *
+ * Best: N
+ * Average: N^2/2
+ * Worst: N^2+N
  */
 export const insertionSort = <T>(
   arr: T[],
