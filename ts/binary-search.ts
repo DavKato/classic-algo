@@ -1,6 +1,6 @@
 const getMidPoint = (min: number, max: number) => Math.floor((max + min) / 2);
 
-export default (target: any, arr: any[]): number | undefined => {
+export const binarySearch = <T>(target: T, arr: T[]): number | undefined => {
   let lowerBound = 0;
   let higherBound = arr.length - 1;
   let midPoint = getMidPoint(lowerBound, higherBound);

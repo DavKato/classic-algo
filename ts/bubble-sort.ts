@@ -1,16 +1,19 @@
 import { defaultComparator } from "./utils.ts";
 
-export default <T>(
+/**
+ * O(N^2)
+ * comparisons: N^2/2
+ * swaps: N^2/2
+ * Total: N^2
+ */
+export const bubbleSort = <T>(
   arr: T[],
   compare = defaultComparator,
 ): T[] => {
   for (let concreteIdx = arr.length - 1; concreteIdx > 1; concreteIdx--) {
     for (let i = 0; i < concreteIdx; i++) {
-      const current = arr[i];
-      const next = arr[i + 1];
-      if (compare(current, next) > 0) {
-        arr[i] = next;
-        arr[i + 1] = current;
+      if (compare(arr[i], arr[i + 1]) > 0) {
+        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
       }
     }
   }
