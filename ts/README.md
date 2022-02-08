@@ -1,7 +1,7 @@
 ### Prequisite
 
-- [Install Deno](https://deno.land/#installation)
+- [Install Deno >= v1.18](https://deno.land/#installation)
 
 ### Commands
 
-- `deno test --unstable`: runs all tests.
+- `deno test`: runs all tests.
