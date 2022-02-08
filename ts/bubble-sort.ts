@@ -1,11 +1,7 @@
 import { defaultComparator } from "./utils.ts";
 
 /**
- * O(N^2)
- * comparisons: N^2/2
- * swaps: N^2/2
- *
- * Always: N^2
+ * Always: O(N^2)
  */
 export const bubbleSort = <T>(
   arr: T[],

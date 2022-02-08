@@ -9,9 +9,14 @@ import {
   unOrderedNumbers,
   unOrderedStrings,
 } from "./utils.ts";
-import { bubbleSort, insertionSort, selectionSort } from "../index.ts";
+import {
+  bubbleSort,
+  insertionSort,
+  quickSort,
+  selectionSort,
+} from "../index.ts";
 
-[bubbleSort, selectionSort, insertionSort].map((sort) =>
+[bubbleSort, selectionSort, insertionSort, quickSort].map((sort) =>
   Deno.test(`${sort.name}`, async (t) => {
     await t.step("default comparison for array with numbers", () => {
       const actual = sort(structuredClone(unOrderedNumbers));
