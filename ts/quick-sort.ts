@@ -1,6 +1,6 @@
 import { defaultComparator } from "./utils.ts";
 
-const getPartitioner = <T>(arr: T[], compare = defaultComparator) =>
+export const getPartitioner = <T>(arr: T[], compare = defaultComparator) =>
   (leftIndex: number, rightIndex: number): number => {
     const pivotIndex = rightIndex;
     const pivot = arr[rightIndex];
