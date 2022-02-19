@@ -1,6 +1,6 @@
 import { assertEquals } from "https://deno.land/std@0.121.0/testing/asserts.ts";
 import { orderedStrings, unOrderedNumbers, unOrderedStrings } from "./utils.ts";
-import { quickSelect } from "../quick-select.ts";
+import { quickSelect } from "../index.ts";
 
 Deno.test("quickSelect", async (t) => {
   await t.step("default comparison for array with numbers", () => {

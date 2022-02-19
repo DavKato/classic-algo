@@ -1,5 +1,5 @@
-import { defaultComparator } from "./utils.ts";
-import { getPartitioner } from "./quick-sort.ts";
+import { defaultComparator } from "../utils.ts";
+import { getPartitioner } from "../sorts/quick-sort.ts";
 
 const getSelector = <T>(
   targetIdx: number,

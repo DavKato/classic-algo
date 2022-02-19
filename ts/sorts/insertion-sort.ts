@@ -1,4 +1,4 @@
-import { defaultComparator } from "./utils.ts";
+import { defaultComparator } from "../utils.ts";
 
 /**
  * Best: O(N)

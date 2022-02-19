@@ -6,7 +6,7 @@ import {
   shortestPath,
   trianguler,
   xIndex,
-} from "../recursion.ts";
+} from "../index.ts";
 
 console.assert(countChars(["af", "d", "", "rec23"]) === 8);
 

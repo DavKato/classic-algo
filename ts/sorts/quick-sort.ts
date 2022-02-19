@@ -1,4 +1,4 @@
-import { defaultComparator } from "./utils.ts";
+import { defaultComparator } from "../utils.ts";
 
 export const getPartitioner = <T>(arr: T[], compare = defaultComparator) =>
   (leftIndex: number, rightIndex: number): number => {
