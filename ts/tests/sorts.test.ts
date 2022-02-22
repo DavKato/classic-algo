@@ -6,6 +6,7 @@ import {
   mixed,
   orderedNumbers,
   orderedStrings,
+  stringComparator,
   unOrderedNumbers,
   unOrderedStrings,
 } from "./utils.ts";
@@ -26,11 +27,8 @@ import {
     });
 
     await t.step("can provide a custom comparator", () => {
-      const pred = (a: string, b: string): number =>
-        orderedStrings.indexOf(a) - orderedStrings.indexOf(b);
-
       const expected = orderedStrings;
-      const actual = sort(structuredClone(unOrderedStrings), pred);
+      const actual = sort(structuredClone(unOrderedStrings), stringComparator);
 
       assertEquals(actual, expected);
     });

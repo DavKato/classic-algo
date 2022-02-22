@@ -5,3 +5,6 @@ export const orderedStrings = ["hey", "Jude", "don't", "be", "afraid"];
 export const unOrderedStrings = ["Jude", "afraid", "be", "hey", "don't"];
 
 export const mixed = [45, "hahaha", { id: "unique?", value: 999 }];
+
+export const stringComparator = (a: string, b: string): number =>
+  orderedStrings.indexOf(a) - orderedStrings.indexOf(b);
