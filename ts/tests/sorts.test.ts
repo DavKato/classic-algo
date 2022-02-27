@@ -1,7 +1,4 @@
-import {
-  assertEquals,
-  assertThrows,
-} from "https://deno.land/std@0.121.0/testing/asserts.ts";
+import { assertEquals, assertThrows } from "./dependencies.ts";
 import {
   mixed,
   orderedNumbers,

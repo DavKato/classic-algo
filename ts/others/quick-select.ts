@@ -1,10 +1,10 @@
-import { defaultComparator } from "../utils.ts";
+import { Comparator, defaultComparator } from "../utils.ts";
 import { getPartitioner } from "../sorts/quick-sort.ts";
 
 const getSelector = <T>(
   targetIdx: number,
   arr: T[],
-  compare = defaultComparator,
+  compare: Comparator<T> = defaultComparator,
 ) => {
   const partition = getPartitioner(arr, compare);
 
@@ -24,7 +24,7 @@ const getSelector = <T>(
 export const quickSelect = <T>(
   targetIdx: number,
   arr: T[],
-  compare = defaultComparator,
+  compare: Comparator<T> = defaultComparator,
 ): T | undefined => {
   if (targetIdx >= arr.length) return undefined;
   return getSelector(targetIdx, arr, compare)();

@@ -1,17 +1,17 @@
-class Node<T = any> {
-  public prev: Node | undefined;
-  public next: Node | undefined;
+class Node<T> {
+  public prev: Node<T> | undefined;
+  public next: Node<T> | undefined;
 
   constructor(public value: T) {}
 }
 
-class DoublyLinkedList<T = any> {
+class DoublyLinkedList<T> {
   private first: Node<T> | undefined;
   private last: Node<T> | undefined;
 
   constructor() {}
 
-  public unshift<P extends T>(value: P) {
+  public unshift(value: T) {
     const node = new Node(value);
 
     if (this.first) {
@@ -38,7 +38,7 @@ class DoublyLinkedList<T = any> {
     return node.value;
   }
 
-  public push<P extends T>(value: P) {
+  public push(value: T) {
     const node = new Node(value);
 
     if (this.last) {
@@ -69,23 +69,23 @@ class DoublyLinkedList<T = any> {
     this.first = this.last = undefined;
   }
 
-  private replaceHeadWith(newHead: Node) {
+  private replaceHeadWith(newHead: Node<T>) {
     newHead.prev = undefined;
     this.first = newHead;
   }
 
-  private replaceTailWith(newTail: Node) {
+  private replaceTailWith(newTail: Node<T>) {
     newTail.next = undefined;
     this.last = newTail;
   }
 }
 
-export class Queue<T = any> {
+export class Queue<T> {
   private list = new DoublyLinkedList<T>();
   constructor() {
   }
 
-  add<P extends T>(value: P) {
+  add(value: T) {
     this.list.push(value);
   }
 

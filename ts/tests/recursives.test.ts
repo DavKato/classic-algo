@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.121.0/testing/asserts.ts";
+import { assertEquals } from "./dependencies.ts";
 
 import {
   countChars,
@@ -7,8 +7,6 @@ import {
   trianguler,
   xIndex,
 } from "../index.ts";
-
-console.assert(countChars(["af", "d", "", "rec23"]) === 8);
 
 Deno.test("recursive functions", async (t) => {
   await t.step("count strings", () => {

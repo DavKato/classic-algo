@@ -1,6 +1,9 @@
-import { defaultComparator } from "../utils.ts";
+import { Comparator, defaultComparator } from "../utils.ts";
 
-export const getPartitioner = <T>(arr: T[], compare = defaultComparator) =>
+export const getPartitioner = <T>(
+  arr: T[],
+  compare: Comparator<T> = defaultComparator,
+) =>
   (leftIndex: number, rightIndex: number): number => {
     const pivotIndex = rightIndex;
     const pivot = arr[rightIndex];
@@ -27,7 +30,7 @@ export const getPartitioner = <T>(arr: T[], compare = defaultComparator) =>
     return leftIndex;
   };
 
-const getSorter = <T>(arr: T[], compare = defaultComparator) => {
+const getSorter = <T>(arr: T[], compare: Comparator<T> = defaultComparator) => {
   const partition = getPartitioner(arr, compare);
 
   const sort = (leftIndex = 0, rightIndex = arr.length - 1) => {
@@ -47,7 +50,10 @@ const getSorter = <T>(arr: T[], compare = defaultComparator) => {
  * Average: O(N log N)
  * Worst: O(N^2)
  */
-export const quickSort = <T>(arr: T[], compare = defaultComparator): T[] => {
+export const quickSort = <T>(
+  arr: T[],
+  compare: Comparator<T> = defaultComparator,
+): T[] => {
   getSorter(arr, compare)();
   return arr;
 };

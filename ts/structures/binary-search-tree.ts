@@ -1,4 +1,4 @@
-import { defaultComparator } from "../utils.ts";
+import { Comparator, defaultComparator } from "../utils.ts";
 type Destination = "left" | "right";
 
 export class Node<T> {
@@ -12,7 +12,7 @@ export class BinarySearchTree<T> {
   private root: Node<T> | undefined;
   private count = 0;
 
-  constructor(private compare = defaultComparator) {}
+  constructor(private compare: Comparator<T> = defaultComparator) {}
 
   search(value: T, node = this.root): Node<T> | undefined {
     if (!node || value === node.value) return node;

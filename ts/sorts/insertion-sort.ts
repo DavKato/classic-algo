@@ -1,4 +1,4 @@
-import { defaultComparator } from "../utils.ts";
+import { Comparator, defaultComparator } from "../utils.ts";
 
 /**
  * Best: O(N)
@@ -7,7 +7,7 @@ import { defaultComparator } from "../utils.ts";
  */
 export const insertionSort = <T>(
   arr: T[],
-  compare = defaultComparator,
+  compare: Comparator<T> = defaultComparator,
 ): T[] => {
   for (let i = 1; i < arr.length; i++) {
     const temp = arr[i];

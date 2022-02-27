@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.121.0/testing/asserts.ts";
+import { assertEquals } from "./dependencies.ts";
 
 import { Queue } from "../structures/doubly-linked-list.ts";
 

@@ -1,5 +1,9 @@
-import { assertEquals } from "https://deno.land/std@0.121.0/testing/asserts.ts";
-import { orderedStrings, unOrderedNumbers, unOrderedStrings } from "./utils.ts";
+import { assertEquals } from "./dependencies.ts";
+import {
+  stringComparator,
+  unOrderedNumbers,
+  unOrderedStrings,
+} from "./utils.ts";
 import { quickSelect } from "../index.ts";
 
 Deno.test("quickSelect", async (t) => {
@@ -18,10 +22,7 @@ Deno.test("quickSelect", async (t) => {
   });
 
   await t.step("can provide a custom comparator", () => {
-    const pred = (a: string, b: string): number =>
-      orderedStrings.indexOf(a) - orderedStrings.indexOf(b);
-
-    const actual = quickSelect(1, unOrderedStrings, pred);
+    const actual = quickSelect(1, unOrderedStrings, stringComparator);
     const expected = "Jude";
 
     assertEquals(actual, expected);

@@ -1,11 +1,11 @@
-import { defaultComparator } from "../utils.ts";
+import { Comparator, defaultComparator } from "../utils.ts";
 
 /**
  * Always: O(N^2)
  */
 export const selectionSort = <T>(
   arr: T[],
-  compare = defaultComparator,
+  compare: Comparator<T> = defaultComparator,
 ): T[] => {
   const len = arr.length;
 
