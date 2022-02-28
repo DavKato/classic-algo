@@ -61,26 +61,26 @@ export class BinarySearchTree<T> {
 
       if (comparison > 0) {
         node.right = _delete(node.right);
+        return;
       }
 
       if (comparison < 0) {
         node.left = _delete(node.left);
+        return;
       }
 
-      if (value === node.value) { // TODO: this condition should be deletable ? need to early return in above conditions
-        deleted = true;
-        this.count--;
+      deleted = true;
+      this.count--;
 
-        if (!node.right) {
-          return node.left;
-        }
-
-        if (!node.left) {
-          return node.right;
-        }
-
-        node.right = this.lift(node.right, node);
+      if (!node.right) {
+        return node.left;
       }
+
+      if (!node.left) {
+        return node.right;
+      }
+
+      node.right = this.lift(node.right, node);
     };
 
     _delete(this.root);

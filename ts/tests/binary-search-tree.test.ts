@@ -89,6 +89,31 @@ const runWith = <T extends string | number>(
       });
     });
 
+    await t.step("deleting", async (t2) => {
+      await t2.step("an existing value", () => {
+        const bst = setup(dataset);
+
+        const before = bst.length;
+        const isDeleted = bst.delete(dataset[4]);
+        const after = bst.length;
+
+        assertEquals(after - before, -1, "tree's length should be decreased");
+        assertEquals(isDeleted, true, "delete() should return true");
+      });
+
+      await t2.step("a non-existing value", () => {
+        const bst = setup(dataset);
+        const uniqueVal = unique(dataset[0]);
+
+        const before = bst.length;
+        const isDeleted = bst.delete(uniqueVal);
+        const after = bst.length;
+
+        assertEquals(after - before, 0, "length shouldn't change");
+        assertEquals(isDeleted, false, "delete() should return false");
+      });
+    });
+
     await t.step("traversing", () => {
       const bst = setup(dataset);
       const cb: TraverseCb<T, T[]> = (node, data) => {
