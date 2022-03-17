@@ -1,6 +1,6 @@
 import { assertEquals } from "./dependencies.ts";
 
-import { Comparator } from "../utils.ts";
+import { Comparator } from "../src/utils.ts";
 import {
   orderedNumbers,
   orderedStrings,
@@ -8,7 +8,7 @@ import {
   unOrderedNumbers,
   unOrderedStrings,
 } from "./utils.ts";
-import { BinaryHeap } from "../structures/binary-heap.ts";
+import { BinaryHeap } from "../src/index.ts";
 
 const setupSetup = <T>(comparator?: Comparator<T>) =>
   (values: T[]): BinaryHeap<T> => {

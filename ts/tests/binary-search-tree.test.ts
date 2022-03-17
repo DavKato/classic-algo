@@ -1,11 +1,7 @@
 import { assertEquals } from "./dependencies.ts";
 
-import { Comparator } from "../utils.ts";
-import {
-  BinarySearchTree,
-  Node,
-  TraverseCb,
-} from "../structures/binary-search-tree.ts";
+import { Comparator } from "../src/utils.ts";
+import { BinarySearchTree, Node, TraverseCb } from "../src/index.ts";
 import {
   orderedNumbers,
   orderedStrings,

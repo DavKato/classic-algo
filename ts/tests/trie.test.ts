@@ -1,6 +1,6 @@
 import { assertEquals } from "./dependencies.ts";
 
-import { Trie } from "../structures/trie.ts";
+import { Trie } from "../src/index.ts";
 
 Deno.test("Autocomplete using trie", () => {
   const trie = new Trie();

@@ -12,7 +12,7 @@ import {
   insertionSort,
   quickSort,
   selectionSort,
-} from "../index.ts";
+} from "../src/index.ts";
 
 [bubbleSort, selectionSort, insertionSort, quickSort].map((sort) =>
   Deno.test(`${sort.name}`, async (t) => {

@@ -1,6 +1,6 @@
 import { assertEquals } from "./dependencies.ts";
 
-import { Queue } from "../structures/doubly-linked-list.ts";
+import { Queue } from "../src/index.ts";
 
 Deno.test("queue with doubly linked list", () => {
   const queue = new Queue();

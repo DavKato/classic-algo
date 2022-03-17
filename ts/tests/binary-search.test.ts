@@ -1,6 +1,6 @@
 import { orderedNumbers } from "./utils.ts";
 import { assertEquals } from "./dependencies.ts";
-import { binarySearch } from "../others/binary-search.ts";
+import { binarySearch } from "../src/index.ts";
 
 Deno.test("binary search", async (t) => {
   await t.step("with contained value #1", () => {

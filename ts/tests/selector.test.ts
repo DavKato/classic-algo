@@ -4,7 +4,7 @@ import {
   unOrderedNumbers,
   unOrderedStrings,
 } from "./utils.ts";
-import { quickSelect } from "../index.ts";
+import { quickSelect } from "../src/index.ts";
 
 Deno.test("quickSelect", async (t) => {
   await t.step("default comparison for array with numbers", () => {

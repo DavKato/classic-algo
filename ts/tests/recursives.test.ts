@@ -6,7 +6,7 @@ import {
   shortestPath,
   trianguler,
   xIndex,
-} from "../index.ts";
+} from "../src/index.ts";
 
 Deno.test("recursive functions", async (t) => {
   await t.step("count strings", () => {
